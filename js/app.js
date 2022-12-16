@@ -7,12 +7,17 @@ let hunger, sleepiness, level, health, petName;
 /*------------------------ Cached Element References ------------------------*/
 
 const feed = document.getElementById("feed");
+const destroyCode = document.getElementById("play");
 const msg = document.getElementById("message");
+const hungerMsg = document.getElementById("hunger-level");
+const excitementMsg = document.getElementById("excitement-level");
 const nameBtn = document.getElementById("name-button");
+const img = document.getElementById("my-image");
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 feed.addEventListener("click", eat);
+destroyCode.addEventListener("click", play);
 nameBtn.addEventListener("click", getName);
 
 /*-------------------------------- Functions --------------------------------*/
@@ -23,7 +28,7 @@ function init() {
   excitement = 10;
   level = 1;
   health = 100;
-  music();
+  // music();
   hungerTime();
   excitementTime();
   render();
@@ -46,7 +51,10 @@ function getName() {
 
 function eat() {
   hunger += 1;
-  msg.textContent = hunger;
+}
+
+function play() {
+  excitement += 1;
 }
 
 function music() {
@@ -63,7 +71,11 @@ function hungerTime() {
   setInterval(() => {
     if (hunger !== 0) {
       hunger -= 1;
+      hungerMsg.textContent = `Hunger: ${hunger}`;
       console.log("Hunger: ", hunger);
+      if (hunger === 0) {
+        gameOver();
+      }
     } else {
       return;
     }
@@ -74,9 +86,24 @@ function excitementTime() {
   setInterval(() => {
     if (excitement !== 0) {
       excitement -= 1;
+      excitementMsg.textContent = `Excitement: ${excitement}`;
       console.log("Excitement", excitement);
+      if (excitement === 0) {
+        gameOver();
+      }
     } else {
       return;
     }
   }, 500);
+}
+
+// function evolve() {
+//   setTimeout(function () {
+//     img.src = "./assets/testSprite2.gif";
+//   }, 5000);
+// }
+
+function gameOver() {
+  excitementMsg.textContent = "";
+  hungerMsg.textContent = "";
 }
