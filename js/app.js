@@ -91,6 +91,7 @@ function levelUp() {
     if (hunger > 100 && excitement > 100) {
       lvl.textContent = `Level: 4`;
       console.log("LEVEL UP!");
+      confetti.start(1500);
       gameOver();
     }
   }
