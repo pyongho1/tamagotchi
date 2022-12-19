@@ -28,7 +28,7 @@ function init() {
   excitement = 10;
   level = 1;
   health = 100;
-  // music();
+  music();
   hungerTime();
   excitementTime();
   render();
@@ -50,11 +50,19 @@ function getName() {
 }
 
 function eat() {
-  hunger += 1;
+  if (hunger !== 0) {
+    hunger += 1;
+  } else {
+    return;
+  }
 }
 
 function play() {
-  excitement += 1;
+  if (excitement !== 0) {
+    excitement += 1;
+  } else {
+    return;
+  }
 }
 
 function music() {
@@ -63,9 +71,7 @@ function music() {
   audio.play();
 }
 
-// function health() {
-
-// }
+// function health() {}
 
 function hungerTime() {
   setInterval(() => {
@@ -90,6 +96,7 @@ function excitementTime() {
       console.log("Excitement", excitement);
       if (excitement === 0) {
         gameOver();
+        return;
       }
     } else {
       return;
@@ -97,13 +104,15 @@ function excitementTime() {
   }, 500);
 }
 
-// function evolve() {
-//   setTimeout(function () {
-//     img.src = "./assets/testSprite2.gif";
-//   }, 5000);
-// }
+function evolve() {
+  if(excitementTime)
+  setTimeout(function () {
+    img.src = "./assets/testSprite2.gif";
+  }, 5000);
+}
 
 function gameOver() {
   excitementMsg.textContent = "";
   hungerMsg.textContent = "";
+  msg.textContent = "GAME OVER!";
 }
