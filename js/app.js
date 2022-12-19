@@ -2,12 +2,12 @@
 
 /*-------------------------------- Variables --------------------------------*/
 
-let hunger, sleepiness, level, health, petName, excitement;
+let hunger, nap, level, health, petName, excitement;
 
 /*------------------------ Cached Element References ------------------------*/
 
 const feed = document.getElementById("feed");
-const destroyCode = document.getElementById("play");
+const playBtn = document.getElementById("play");
 const lvl = document.getElementById("charLevel");
 const hungerMsg = document.getElementById("hunger-level");
 const excitementMsg = document.getElementById("excitement-level");
@@ -15,12 +15,14 @@ const nameBtn = document.getElementById("name-button");
 const img = document.getElementById("my-image");
 const hungerBar = document.getElementById("hunger-fill");
 const exciteBar = document.getElementById("excitement-fill");
+const randomBtn = document.getElementById("random");
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 feed.addEventListener("click", eat);
-destroyCode.addEventListener("click", play);
+playBtn.addEventListener("click", play);
 nameBtn.addEventListener("click", getName);
+randomBtn.addEventListener("click", getRandomBuff);
 
 /*-------------------------------- Functions --------------------------------*/
 // init();
@@ -99,6 +101,9 @@ function levelUp() {
 
 function hungerTime() {
   const test = setInterval(() => {
+    if (hunger >= 100) {
+      hunger = 100;
+    }
     if (hunger !== 0) {
       hunger -= 1;
       hungerMsg.textContent = `Hunger: ${hunger}`;
@@ -107,9 +112,6 @@ function hungerTime() {
       if (hunger === 0) {
         gameOver();
       }
-    } else if (hunger < 100) {
-      // return;
-      console.log(`LEVEL UP ! LVL: ${level}`);
     } else {
       return;
     }
@@ -118,6 +120,9 @@ function hungerTime() {
 
 function excitementTime() {
   setInterval(() => {
+    if (excitement >= 100) {
+      excitement = 100;
+    }
     if (excitement !== 0) {
       excitement -= 1;
       excitementMsg.textContent = `Excitement: ${excitement}`;
@@ -133,11 +138,34 @@ function excitementTime() {
   }, 1000);
 }
 
-function evolve() {
-  if (excitementTime)
-    setTimeout(function () {
-      img.src = "./assets/testSprite2.gif";
-    }, 5000);
+// function evolve() {
+//   if (excitementTime)
+//     setTimeout(function () {
+//       img.src = "./assets/testSprite2.gif";
+//     }, 5000);
+// }
+
+function getRandomBuff() {
+  const randomNumber = Math.floor(Math.random() * 4);
+
+  switch (randomNumber) {
+    case 0:
+      return (hunger = hunger + 10);
+      console.log("hunger = hunger + 5");
+      break;
+    case 1:
+      return (hunger = hunger - 5);
+      console.log("hunger = hunger - 5");
+      break;
+    case 2:
+      return (excitement = excitement + 10);
+      console.log("excitement = excitement + 5");
+      break;
+    case 3:
+      return (excitement = excitement - 5);
+      console.log("excitement = excitement - 3");
+      break;
+  }
 }
 
 function gameOver() {
