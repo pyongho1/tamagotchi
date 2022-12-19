@@ -16,6 +16,7 @@ const img = document.getElementById("my-image");
 const hungerBar = document.getElementById("hunger-fill");
 const exciteBar = document.getElementById("excitement-fill");
 const randomBtn = document.getElementById("random");
+const barInfo = document.getElementById("barInfo");
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -84,20 +85,20 @@ function levelUp() {
   if (level < 4) {
     if (hunger > 40 && hunger < 70 && excitement > 40 && excitement < 70) {
       lvl.textContent = `Level: 2`;
-      img.classList.add("animate__animated", "animate__rubberBand");
+      img.classList.add("animate__animated", "animate__flip");
       console.log("LEVEL UP!");
     }
     if (hunger > 70 && hunger < 100 && excitement > 70 && excitement < 100) {
       lvl.textContent = `Level: 3`;
-      img.classList.add("animate__animated", "animate__rubberBand");
+      img.classList.add("animate__animated", "animate__flip");
       console.log("LEVEL UP!");
     }
     if (hunger > 100 && excitement > 100) {
       lvl.textContent = `Level: 4`;
-      img.classList.add("animate__animated", "animate__rubberBand");
+      img.classList.add("animate__animated", "animate__flip");
       console.log("LEVEL UP!");
       confetti.start(1500);
-      gameOver();
+      winGame();
     }
   }
 }
@@ -175,4 +176,8 @@ function gameOver() {
   excitementMsg.textContent = "";
   hungerMsg.textContent = "";
   lvl.textContent = "GAME OVER!";
+}
+
+function winGame() {
+  barInfo.parentNode.removeChild(barInfo);
 }
