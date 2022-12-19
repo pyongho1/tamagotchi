@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background-color: #f7dd72;
+  font-family: "Patrick Hand", cursive;
 }
 
 .container {
@@ -71,5 +72,4 @@ body {
 }
 
 .buttonContainer button:hover {
-  
 }
