@@ -17,6 +17,7 @@ const hungerBar = document.getElementById("hunger-fill");
 const exciteBar = document.getElementById("excitement-fill");
 const randomBtn = document.getElementById("random");
 const barInfo = document.getElementById("barInfo");
+const riskLog = document.getElementById("risk-log");
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -114,6 +115,7 @@ function hungerTime() {
       hungerBar.style.width = `${hunger}%`;
       // console.log("Hunger: ", hunger);
       if (hunger === 0) {
+        barInfo.parentNode.removeChild(barInfo);
         gameOver();
       }
     } else {
@@ -154,19 +156,23 @@ function getRandomBuff() {
 
   switch (randomNumber) {
     case 0:
-      return (hunger = hunger + 10);
+      hunger = hunger + 10;
+      riskLog.textContent = `LOG: +5 towards hunger! Phew!`;
       console.log("hunger = hunger + 5");
       break;
     case 1:
-      return (hunger = hunger - 5);
+      hunger = hunger - 5;
+      riskLog.textContent = `LOG: -5 towards hunger...😢`;
       console.log("hunger = hunger - 5");
       break;
     case 2:
-      return (excitement = excitement + 10);
+      excitement = excitement + 10;
+      riskLog.textContent = `LOG: +5 towards excitement! Yay!`;
       console.log("excitement = excitement + 5");
       break;
     case 3:
-      return (excitement = excitement - 5);
+      excitement = excitement - 5;
+      riskLog.textContent = `LOG: -5 towards excitement...😢`;
       console.log("excitement = excitement - 3");
       break;
   }
