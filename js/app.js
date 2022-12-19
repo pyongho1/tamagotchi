@@ -80,20 +80,16 @@ function music() {
 
 function levelUp() {
   if (level < 4) {
-    if (hunger === 40 && excitement === 40) {
-      level++;
-      lvl.textContent = `Level: ${level}`;
-      return;
+    if (hunger > 40 && hunger < 70 && excitement > 40 && excitement < 70) {
+      lvl.textContent = `Level: 2`;
       console.log("LEVEL UP!");
     }
-    if (hunger === 70 && excitement === 70) {
-      level++;
-      lvl.textContent = `Level: ${level}`;
+    if (hunger > 70 && hunger < 100 && excitement > 70 && excitement < 100) {
+      lvl.textContent = `Level: 3`;
       console.log("LEVEL UP!");
     }
-    if (hunger === 100 && excitement === 100) {
-      level++;
-      lvl.textContent = `Level: ${level}`;
+    if (hunger > 100 && excitement > 100) {
+      lvl.textContent = `Level: 4`;
       console.log("LEVEL UP!");
       gameOver();
     }
@@ -101,7 +97,7 @@ function levelUp() {
 }
 
 function hungerTime() {
-  setInterval(() => {
+  const test = setInterval(() => {
     if (hunger !== 0) {
       hunger -= 1;
       hungerMsg.textContent = `Hunger: ${hunger}`;
