@@ -46,6 +46,8 @@ body {
 .screen {
   /* border: 1px solid; */
   background-color: white;
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
