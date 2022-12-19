@@ -17,10 +17,26 @@
   </head>
   <body>
     <div class="container">
-      <h2 id="pet-name">Name</h2>
-      <h2 id="message">message</h2>
-      <p id="hunger-level">Hunger:</p>
-      <p id="excitement-level">Excitement:</p>
+      <div class="displayNameLevel">
+        <h2 id="pet-name">Name</h2>
+        <h2 id="message">message</h2>
+      </div>
+      <div class="hungerBarContainer">
+        <p id="hunger-level">Hunger:</p>
+        <div class="wrapper">
+          <div class="progress-bar">
+            <span class="progress-bar-fill" id="hunger-fill"></span>
+          </div>
+        </div>
+      </div>
+      <div class="hungerBarContainer">
+        <p id="excitement-level">Excitement:</p>
+        <div class="wrapper">
+          <div class="progress-bar">
+            <span class="progress-bar-fill" id="excitement-fill"></span>
+          </div>
+        </div>
+      </div>
       <div class="house">
         <div class="screen">
           <img src="./assets/dinoSprite.gif" id="my-image" alt="testSprite" />

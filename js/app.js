@@ -13,6 +13,8 @@ const hungerMsg = document.getElementById("hunger-level");
 const excitementMsg = document.getElementById("excitement-level");
 const nameBtn = document.getElementById("name-button");
 const img = document.getElementById("my-image");
+const hungerBar = document.getElementById("hunger-fill");
+const exciteBar = document.getElementById("excitement-fill");
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -24,13 +26,15 @@ nameBtn.addEventListener("click", getName);
 // init();
 
 function init() {
-  hunger = 10;
-  excitement = 10;
+  hunger = 90;
+  excitement = 90;
   level = 1;
   health = 100;
   music();
   hungerTime();
   excitementTime();
+  levelUp();
+  // getName();
   render();
 }
 
@@ -41,7 +45,7 @@ function render() {
 function getName() {
   let inputValue = document.getElementById("name-input");
   let petName = inputValue.value;
-  document.getElementById("pet-name").textContent = petName;
+  document.getElementById("pet-name").textContent = `${petName}`;
   inputValue.value = "";
   if (petName) {
     document.getElementById("start-info").innerHTML = "";
@@ -68,24 +72,34 @@ function play() {
 function music() {
   var audio = new Audio("./assets/backgroundMusic.mp3");
   audio.loop = true;
+  audio.volume = 0.3;
   audio.play();
 }
 
-// function health() {}
+function levelUp() {
+  if (hunger > 100 && excitement > 100) {
+    level++;
+    console.log("LEVEL UP!");
+  }
+}
 
 function hungerTime() {
   setInterval(() => {
     if (hunger !== 0) {
       hunger -= 1;
       hungerMsg.textContent = `Hunger: ${hunger}`;
-      console.log("Hunger: ", hunger);
+      hungerBar.style.width = `${hunger}%`;
+      // console.log("Hunger: ", hunger);
       if (hunger === 0) {
         gameOver();
       }
+    } else if (hunger < 100) {
+      // return;
+      console.log(`LEVEL UP ! LVL: ${level}`);
     } else {
       return;
     }
-  }, 500);
+  }, 1000);
 }
 
 function excitementTime() {
@@ -93,7 +107,8 @@ function excitementTime() {
     if (excitement !== 0) {
       excitement -= 1;
       excitementMsg.textContent = `Excitement: ${excitement}`;
-      console.log("Excitement", excitement);
+      exciteBar.style.width = `${excitement}%`;
+      // console.log("Excitement", excitement);
       if (excitement === 0) {
         gameOver();
         return;
@@ -101,14 +116,14 @@ function excitementTime() {
     } else {
       return;
     }
-  }, 500);
+  }, 1000);
 }
 
 function evolve() {
-  if(excitementTime)
-  setTimeout(function () {
-    img.src = "./assets/testSprite2.gif";
-  }, 5000);
+  if (excitementTime)
+    setTimeout(function () {
+      img.src = "./assets/testSprite2.gif";
+    }, 5000);
 }
 
 function gameOver() {
