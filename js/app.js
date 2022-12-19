@@ -2,13 +2,13 @@
 
 /*-------------------------------- Variables --------------------------------*/
 
-let hunger, sleepiness, level, health, petName;
+let hunger, sleepiness, level, health, petName, excitement;
 
 /*------------------------ Cached Element References ------------------------*/
 
 const feed = document.getElementById("feed");
 const destroyCode = document.getElementById("play");
-const msg = document.getElementById("message");
+const lvl = document.getElementById("charLevel");
 const hungerMsg = document.getElementById("hunger-level");
 const excitementMsg = document.getElementById("excitement-level");
 const nameBtn = document.getElementById("name-button");
@@ -26,8 +26,8 @@ nameBtn.addEventListener("click", getName);
 // init();
 
 function init() {
-  hunger = 90;
-  excitement = 90;
+  hunger = 35;
+  excitement = 35;
   level = 1;
   health = 100;
   music();
@@ -59,6 +59,7 @@ function eat() {
   } else {
     return;
   }
+  levelUp();
 }
 
 function play() {
@@ -67,6 +68,7 @@ function play() {
   } else {
     return;
   }
+  levelUp();
 }
 
 function music() {
@@ -77,9 +79,24 @@ function music() {
 }
 
 function levelUp() {
-  if (hunger > 100 && excitement > 100) {
-    level++;
-    console.log("LEVEL UP!");
+  if (level < 4) {
+    if (hunger === 40 && excitement === 40) {
+      level++;
+      lvl.textContent = `Level: ${level}`;
+      return;
+      console.log("LEVEL UP!");
+    }
+    if (hunger === 70 && excitement === 70) {
+      level++;
+      lvl.textContent = `Level: ${level}`;
+      console.log("LEVEL UP!");
+    }
+    if (hunger === 100 && excitement === 100) {
+      level++;
+      lvl.textContent = `Level: ${level}`;
+      console.log("LEVEL UP!");
+      gameOver();
+    }
   }
 }
 
@@ -129,5 +146,5 @@ function evolve() {
 function gameOver() {
   excitementMsg.textContent = "";
   hungerMsg.textContent = "";
-  msg.textContent = "GAME OVER!";
+  lvl.textContent = "GAME OVER!";
 }
