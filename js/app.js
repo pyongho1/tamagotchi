@@ -55,7 +55,7 @@ function resetGame() {
 function getName() {
   let inputValue = document.getElementById("name-input");
   let petName = inputValue.value;
-  document.getElementById("pet-name").textContent = `${petName}`;
+  document.getElementById("pet-name").textContent = `Name: ${petName}`;
   inputValue.value = "";
   if (petName) {
     document.getElementById("start-info").innerHTML = "";
@@ -162,6 +162,7 @@ function excitementTime() {
 function getRandomBuff() {
   const randomNumber = Math.floor(Math.random() * 4);
 
+  
   switch (randomNumber) {
     case 0:
       hunger = hunger + 10;
