@@ -12,7 +12,7 @@ Right after you choose your slime's name, the game will start right away. Starti
 
 ### Gameplay screenshot
 
-<img src="/assets/readMeScreenshot/1.png" alt="Alt text" title="Optional title">
+<center><img src="/assets/readMeScreenshot/1.png" alt="Alt text" title="Optional title"></center>
 
 #
 
@@ -24,8 +24,18 @@ Right after you choose your slime's name, the game will start right away. Starti
 
 #### Planning materials
 
-Google Docs [See more...](https://docs.google.com/document/d/11KhA40XKTPMAzqeJZODn71cWkwgKWzCSHVt52X2zG2c/edit).
-Trello [See more...](https://trello.com/invite/b/z3Qx2dVM/ATTI9deb228fc830506304e092dc41b7b1681482A1EA/tamagotchi).
+Google Docs [See more...](https://docs.google.com/document/d/11KhA40XKTPMAzqeJZODn71cWkwgKWzCSHVt52X2zG2c/edit)
+
+Trello [See more...](https://trello.com/invite/b/z3Qx2dVM/ATTI9deb228fc830506304e092dc41b7b1681482A1EA/tamagotchi)
+
+#
+
+### Future enhancement plans 🧊
+
+[] Add more slime expressions
+[] Add different type of slimes to choose from
+[] More levels
+[] add variety of difficulties
 
 #
 
