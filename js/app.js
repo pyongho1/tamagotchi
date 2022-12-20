@@ -92,11 +92,13 @@ function levelUp() {
   if (level < 4) {
     if (hunger > 40 && hunger < 70 && excitement > 40 && excitement < 70) {
       lvl.textContent = `Level: 2`;
+      img.src = "./assets/2_slime_idle.png";
       img.classList.add("animate__animated", "animate__flip");
       console.log("LEVEL UP!");
     }
     if (hunger > 70 && hunger < 100 && excitement > 70 && excitement < 100) {
       lvl.textContent = `Level: 3`;
+      img.src = "./assets/3_slime_idle.png";
       img.classList.add("animate__animated", "animate__flip");
       console.log("LEVEL UP!");
     }

@@ -16,7 +16,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  width: 40%;
 }
 
 .hungerBarContainer {
@@ -108,7 +108,7 @@ body {
 }
 
 .screen img {
-  height: 30%;
+  height: 25%;
 }
 
 .buttonContainer button {
