@@ -32,10 +32,10 @@ Trello [See more...](https://trello.com/invite/b/z3Qx2dVM/ATTI9deb228fc830506304
 
 ### Future enhancement plans 🧊
 
-[] Add more slime expressions
-[] Add different type of slimes to choose from
-[] More levels
-[] add variety of difficulties
+[ ] Add more slime expressions
+[ ] Add different type of slimes to choose from
+[ ] More levels
+[ ] add variety of difficulties
 
 #
 
