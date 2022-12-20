@@ -124,6 +124,28 @@ body {
     0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
 }
 
+.howtoBox {
+  display: flex;
+  width: 30%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.howtoBox button {
+  border-radius: 3px;
+  border: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #1e152a;
+  color: #f7dd72;
+}
+
+.howtoBox button:hover {
+  background-color: #f7dd72;
+  color: #1e152a;
+}
+
 .wrapper {
   width: 500px;
 }

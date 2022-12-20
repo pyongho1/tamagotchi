@@ -18,6 +18,7 @@ const exciteBar = document.getElementById("excitement-fill");
 const randomBtn = document.getElementById("random");
 const barInfo = document.getElementById("barInfo");
 const riskLog = document.getElementById("risk-log");
+const resetBtn = document.getElementById("reset");
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -25,6 +26,7 @@ feed.addEventListener("click", eat);
 playBtn.addEventListener("click", play);
 nameBtn.addEventListener("click", getName);
 randomBtn.addEventListener("click", getRandomBuff);
+resetBtn.addEventListener("click", resetGame);
 
 /*-------------------------------- Functions --------------------------------*/
 // init();
@@ -44,6 +46,10 @@ function init() {
 
 function render() {
   getName();
+}
+
+function resetGame() {
+  location.reload();
 }
 
 function getName() {
