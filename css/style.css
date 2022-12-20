@@ -56,6 +56,31 @@ body {
   align-items: center;
 }
 
+.infoContainer input {
+  background: none;
+  padding: 5px 5px;
+  margin: 0px 10px;
+}
+
+.infoContainer input:focus {
+  outline: none;
+}
+
+.infoContainer button {
+  border-radius: 3px;
+  border: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #1e152a;
+  color: #f7dd72;
+}
+
+.infoContainer button:hover {
+  background-color: #f7dd72;
+  color: #1e152a;
+}
+
 .buttonContainer {
   display: flex;
   /* border: 1px solid white; */
