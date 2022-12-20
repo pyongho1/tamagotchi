@@ -29,18 +29,16 @@ randomBtn.addEventListener("click", getRandomBuff);
 resetBtn.addEventListener("click", resetGame);
 
 /*-------------------------------- Functions --------------------------------*/
-// init();
 
 function init() {
-  hunger = 35;
-  excitement = 35;
+  hunger = 10;
+  excitement = 10;
   level = 1;
   health = 100;
   music();
   hungerTime();
   excitementTime();
   levelUp();
-  // getName();
   render();
 }
 
@@ -152,17 +150,9 @@ function excitementTime() {
   }, 1000);
 }
 
-// function evolve() {
-//   if (excitementTime)
-//     setTimeout(function () {
-//       img.src = "./assets/testSprite2.gif";
-//     }, 5000);
-// }
-
 function getRandomBuff() {
   const randomNumber = Math.floor(Math.random() * 4);
 
-  
   switch (randomNumber) {
     case 0:
       hunger = hunger + 10;
