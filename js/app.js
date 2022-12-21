@@ -120,7 +120,7 @@ function hungerTime() {
       hungerMsg.textContent = `Hunger: ${hunger}`;
       hungerBar.style.width = `${hunger}%`;
       // console.log("Hunger: ", hunger);
-      if (hunger === 0) {
+      if (hunger === 0 || excitement === 0) {
         barInfo.parentNode.removeChild(barInfo);
         gameOver();
       }
@@ -140,7 +140,7 @@ function excitementTime() {
       excitementMsg.textContent = `Excitement: ${excitement}`;
       exciteBar.style.width = `${excitement}%`;
       // console.log("Excitement", excitement);
-      if (excitement === 0) {
+      if (excitement === 0 || hunger === 0) {
         gameOver();
         return;
       }
@@ -181,8 +181,13 @@ function gameOver() {
   excitementMsg.textContent = "";
   hungerMsg.textContent = "";
   lvl.textContent = "GAME OVER!";
+  lvl.classList.add("animate__animated", "animate__heartBeat");
+  lvl.style.fontSize = "40px";
 }
 
 function winGame() {
   barInfo.parentNode.removeChild(barInfo);
+  let winAudio = new Audio("./assets/yay.wav");
+  winAudio.volume = 0.3;
+  winAudio.play();
 }
