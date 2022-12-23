@@ -19,6 +19,7 @@ const randomBtn = document.getElementById("random");
 const barInfo = document.getElementById("barInfo");
 const riskLog = document.getElementById("risk-log");
 const resetBtn = document.getElementById("reset");
+const gameContainer = document.getElementById("house");
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -117,7 +118,6 @@ function hungerTime() {
       hunger -= 1;
       hungerMsg.textContent = `Hunger: ${hunger}`;
       hungerBar.style.width = `${hunger}%`;
-      // console.log("Hunger: ", hunger);
       if (hunger === 0 || excitement === 0) {
         barInfo.parentNode.removeChild(barInfo);
         gameOver();
@@ -137,7 +137,6 @@ function excitementTime() {
       excitement -= 1;
       excitementMsg.textContent = `Excitement: ${excitement}`;
       exciteBar.style.width = `${excitement}%`;
-      // console.log("Excitement", excitement);
       if (excitement === 0 || hunger === 0) {
         gameOver();
         return;
@@ -154,23 +153,19 @@ function getRandomBuff() {
   switch (randomNumber) {
     case 0:
       hunger = hunger + 10;
-      riskLog.textContent = `LOG: +5 towards hunger! Phew!`;
-      console.log("hunger = hunger + 5");
+      riskLog.textContent = `LOG: +10 towards hunger! Phew!`;
       break;
     case 1:
-      hunger = hunger - 5;
-      riskLog.textContent = `LOG: -5 towards hunger...😢`;
-      console.log("hunger = hunger - 5");
+      hunger = hunger - 10;
+      riskLog.textContent = `LOG: -10 towards hunger...😢`;
       break;
     case 2:
       excitement = excitement + 10;
-      riskLog.textContent = `LOG: +5 towards excitement! Yay!`;
-      console.log("excitement = excitement + 5");
+      riskLog.textContent = `LOG: +10 towards excitement! Yay!`;
       break;
     case 3:
-      excitement = excitement - 5;
-      riskLog.textContent = `LOG: -5 towards excitement...😢`;
-      console.log("excitement = excitement - 3");
+      excitement = excitement - 10;
+      riskLog.textContent = `LOG: -10 towards excitement...😢`;
       break;
   }
 }
@@ -179,8 +174,12 @@ function gameOver() {
   excitementMsg.textContent = "";
   hungerMsg.textContent = "";
   lvl.textContent = "GAME OVER!";
+  let loseAudio = new Audio("./assets/sad.ogg");
+  loseAudio.volume = 0.3;
+  loseAudio.play();
   lvl.classList.add("animate__animated", "animate__heartBeat");
   lvl.style.fontSize = "40px";
+  gameContainer.classList.add("animate__animated", "animate__jello");
 }
 
 function winGame() {
