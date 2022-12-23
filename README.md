@@ -39,6 +39,7 @@ Right after you choose your slime's name, the game will start right away. Starti
 - [ ] More levels
 - [ ] Add variety of difficulties
 - [ ] Dark/Light Mode
+- [ ] Make it more compatible for mobile device
 
 #
 
