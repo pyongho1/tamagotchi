@@ -92,19 +92,17 @@ function levelUp() {
       lvl.textContent = `Level: 2`;
       img.src = "./assets/2_slime_idle.png";
       img.classList.add("animate__animated", "animate__flip");
-      console.log("LEVEL UP!");
     }
     if (hunger > 70 && hunger < 100 && excitement > 70 && excitement < 100) {
       lvl.textContent = `Level: 3`;
       img.src = "./assets/3_slime_idle.png";
       img.classList.add("animate__animated", "animate__flip");
-      console.log("LEVEL UP!");
     }
     if (hunger > 100 && excitement > 100) {
       lvl.textContent = `Level: 4`;
+      img.src = "./assets/4_slime_idle.png";
       img.classList.add("animate__animated", "animate__flip");
-      console.log("LEVEL UP!");
-      confetti.start(1500);
+      confetti.start(5500);
       winGame();
     }
   }
