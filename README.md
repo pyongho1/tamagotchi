@@ -12,7 +12,7 @@ Right after you choose your slime's name, the game will start right away. Starti
 
 ### Gameplay screenshot
 
-<center><img src="/assets/readMeScreenshot/1.png" alt="Alt text" title="Optional title"></center>
+<img src="/assets/readMeScreenshot/1.png" alt="Game Screenshot">
 
 #
 
