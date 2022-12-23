@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  background-color: #f7dd72;
+  /* background-color: #f7dd72; */
+  background-image: url("../assets/backgroundImage.png");
   font-family: "Patrick Hand", cursive;
 }
 
@@ -31,13 +32,13 @@ body {
   flex-direction: column;
   width: 600px;
   align-items: center;
-  border: 3px solid;
+  border: 3px solid #b5a153;
   border-radius: 20px;
   margin-bottom: 25px;
+  background-color: #f7dd72;
 }
 
 .house {
-  /* border: 1px solid; */
   background-color: #1e152a;
   height: 400px;
   width: 600px;
@@ -58,9 +59,10 @@ body {
 }
 
 .infoContainer input {
-  background: none;
+  background: white;
   padding: 5px 5px;
   margin: 0px 10px;
+  border-radius: 5px;
 }
 
 .infoContainer input:focus {

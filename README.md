@@ -46,3 +46,5 @@ Right after you choose your slime's name, the game will start right away. Starti
 ### Attributes 🤩
 
 Background image by <a href="https://www.freepik.com/free-vector/pixel-art-background-autumnal-landscape_31194632.htm#query=pixel%20art&position=1&from_view=keyword">Freepik</a>
+
+Background image by <a href="https://digitalmoons.itch.io/pixel-skies-demo">Digitalmoons</a>
