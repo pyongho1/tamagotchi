@@ -18,9 +18,9 @@ Right after you choose your slime's name, the game will start right away. Starti
 
 ### Technologies used
 
-https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
-https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
-https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+![image]({https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white})
+![image]({https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E})
+![image]({https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white})
 
 #
 
@@ -37,10 +37,11 @@ Trello [See more...](https://trello.com/invite/b/z3Qx2dVM/ATTI9deb228fc830506304
 - [ ] Add more slime expressions
 - [ ] Add different type of slimes to choose from
 - [ ] More levels
-- [ ] add variety of difficulties
+- [ ] Add variety of difficulties
+- [ ] Dark/Light Mode
 
 #
 
 ### Attributes 🤩
 
-Image by <a href="https://www.freepik.com/free-vector/pixel-art-background-autumnal-landscape_31194632.htm#query=pixel%20art&position=1&from_view=keyword">Freepik</a>
+Background image by <a href="https://www.freepik.com/free-vector/pixel-art-background-autumnal-landscape_31194632.htm#query=pixel%20art&position=1&from_view=keyword">Freepik</a>
